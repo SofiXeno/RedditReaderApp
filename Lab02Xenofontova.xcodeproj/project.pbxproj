@@ -80,15 +80,12 @@
 		89A113EE27B5A9EF00B91319 /* Lab02Xenofontova */ = {
 			isa = PBXGroup;
 			children = (
-				89A1140D27BC0CC900B91319 /* 50-0.jpg */,
+				89A1141027BC316F00B91319 /* Images */,
+				89A1140F27BC313900B91319 /* Models */,
 				89A1140427B5B81100B91319 /* Views */,
 				89A1140327B5B44100B91319 /* App */,
 				89A113F327B5A9EF00B91319 /* PostViewController.swift */,
-				89A113F827B5A9F500B91319 /* Assets.xcassets */,
 				89A113FD27B5A9F500B91319 /* Info.plist */,
-				89A1140527B5B85300B91319 /* PostDto.swift */,
-				89A1140727B6810200B91319 /* Request.swift */,
-				89A1140B27B69C8B00B91319 /* Post.swift */,
 			);
 			path = Lab02Xenofontova;
 			sourceTree = "<group>";
@@ -109,6 +106,25 @@
 				89A113FA27B5A9F500B91319 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		89A1140F27BC313900B91319 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				89A1140B27B69C8B00B91319 /* Post.swift */,
+				89A1140727B6810200B91319 /* Request.swift */,
+				89A1140527B5B85300B91319 /* PostDto.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		89A1141027BC316F00B91319 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				89A113F827B5A9F500B91319 /* Assets.xcassets */,
+				89A1140D27BC0CC900B91319 /* 50-0.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		A28617AC7BC208917FC12F4D /* Frameworks */ = {

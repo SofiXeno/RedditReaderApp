@@ -6,8 +6,6 @@
 //
 
 import Foundation
-// "https://www.reddit.com/r/ios/top.json?limit=1"
-
 
 struct Request{
 
@@ -15,10 +13,8 @@ struct Request{
     let url : URL
     
     init(str: String){
-        
         self.session = URLSession(configuration: .default)
         self.url = URL(string: str)!
-        
     }
 
 

@@ -24,16 +24,20 @@ class PostViewController: UIViewController {
     
     // MARK: Lifecycle
     override func viewDidLoad() {
+        
+        overrideUserInterfaceStyle = .dark
 
-        var request = Request(str: "https://www.reddit.com/r/ios/top.json?limit=1&after=t3_sshfj2")
+        //https://www.reddit.com/r/ios/top.json?limit=1&after=t3_sshfj2
+        //https://www.reddit.com/r/ios/top.json?limit=7&after=t3_sshfj2
+        var request = Request(str: "https://www.reddit.com/r/ios/top.json?limit=1")
         
         
         request.fetchPostData { post in
             
             DispatchQueue.main.async {
                 
-            
                 self.savePost(toSave: arc4random_uniform(2) == 0)
+
                 self.usernameLabel.text = post.username
                 self.domainLabel.text = post.domain
                 self.titleLabel.text = post.title
@@ -43,14 +47,12 @@ class PostViewController: UIViewController {
                 self.image.sd_setImage(with: URL(string: post.imageUrl), placeholderImage: UIImage(named: "50-0.jpg"))
                 
             }
-   
         }
   
         super.viewDidLoad()
     
     }
   
-    
     // MARK: Utility functions
     func savePost(toSave: Bool){
         
