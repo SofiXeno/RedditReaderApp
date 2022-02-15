@@ -21,8 +21,6 @@ struct PostDto: Decodable {
       enum CodingKeys: String, CodingKey {
           case data = "data"
       }
-    
-
 }
 
 
@@ -116,12 +114,9 @@ struct ChildData: Decodable {
 
 
 struct Preview: Decodable{
-    
-    
-    
+ 
     let images: [Image]
-    
-    
+ 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.images = try values.decode([Image].self, forKey: .images)
@@ -137,12 +132,9 @@ struct Preview: Decodable{
 }
 
 struct Image: Decodable{
-    
-    
-    
+
     let source: Source
-    
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.source = try values.decode(Source.self, forKey: .source)
@@ -161,8 +153,7 @@ struct Image: Decodable{
 struct Source: Decodable{
     
     let url: String
-    
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.url = try values.decode(String.self, forKey: .url)

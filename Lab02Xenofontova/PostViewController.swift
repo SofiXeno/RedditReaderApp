@@ -31,7 +31,6 @@ class PostViewController: UIViewController {
         //https://www.reddit.com/r/ios/top.json?limit=7&after=t3_sshfj2
         var request = Request(str: "https://www.reddit.com/r/ios/top.json?limit=1")
         
-        
         request.fetchPostData { post in
             
             DispatchQueue.main.async {
