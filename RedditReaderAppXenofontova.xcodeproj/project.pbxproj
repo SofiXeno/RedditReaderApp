@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		845A8F37739FC5A86BC9E552 /* Pods_Lab02Xenofontova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752569F7337F4683B3E0DA99 /* Pods_Lab02Xenofontova.framework */; };
 		89A113F027B5A9EF00B91319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A113EF27B5A9EF00B91319 /* AppDelegate.swift */; };
 		89A113F227B5A9EF00B91319 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A113F127B5A9EF00B91319 /* SceneDelegate.swift */; };
 		89A113F427B5A9EF00B91319 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A113F327B5A9EF00B91319 /* PostViewController.swift */; };
@@ -18,13 +17,14 @@
 		89A1140827B6810200B91319 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1140727B6810200B91319 /* Request.swift */; };
 		89A1140C27B69C8B00B91319 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1140B27B69C8B00B91319 /* Post.swift */; };
 		89A1140E27BC0CCA00B91319 /* 50-0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89A1140D27BC0CC900B91319 /* 50-0.jpg */; };
+		BC8054FCEFD55F26BEBA2D98 /* Pods_RedditReaderAppXenofontova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A980B2FA21CD71F847D349 /* Pods_RedditReaderAppXenofontova.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2CC0D6B19230F3CA6C2DB28D /* Pods-Lab02Xenofontova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lab02Xenofontova.release.xcconfig"; path = "Target Support Files/Pods-Lab02Xenofontova/Pods-Lab02Xenofontova.release.xcconfig"; sourceTree = "<group>"; };
-		740A321A7FD96DFE5E988908 /* Pods-Lab02Xenofontova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lab02Xenofontova.debug.xcconfig"; path = "Target Support Files/Pods-Lab02Xenofontova/Pods-Lab02Xenofontova.debug.xcconfig"; sourceTree = "<group>"; };
-		752569F7337F4683B3E0DA99 /* Pods_Lab02Xenofontova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lab02Xenofontova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		89A113EC27B5A9EF00B91319 /* Lab02Xenofontova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab02Xenofontova.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17B28B7F57FD71D092531B38 /* Pods-RedditReaderAppXenofontova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditReaderAppXenofontova.debug.xcconfig"; path = "Target Support Files/Pods-RedditReaderAppXenofontova/Pods-RedditReaderAppXenofontova.debug.xcconfig"; sourceTree = "<group>"; };
+		39A980B2FA21CD71F847D349 /* Pods_RedditReaderAppXenofontova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedditReaderAppXenofontova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40CB9AE9D242DCD2603F5244 /* Pods-RedditReaderAppXenofontova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditReaderAppXenofontova.release.xcconfig"; path = "Target Support Files/Pods-RedditReaderAppXenofontova/Pods-RedditReaderAppXenofontova.release.xcconfig"; sourceTree = "<group>"; };
+		89A113EC27B5A9EF00B91319 /* RedditReaderAppXenofontova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReaderAppXenofontova.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A113EF27B5A9EF00B91319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A113F127B5A9EF00B91319 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		89A113F327B5A9EF00B91319 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				845A8F37739FC5A86BC9E552 /* Pods_Lab02Xenofontova.framework in Frameworks */,
+				BC8054FCEFD55F26BEBA2D98 /* Pods_RedditReaderAppXenofontova.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,31 +53,39 @@
 		24C8C6F2B44C176A79B8D3F2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				740A321A7FD96DFE5E988908 /* Pods-Lab02Xenofontova.debug.xcconfig */,
-				2CC0D6B19230F3CA6C2DB28D /* Pods-Lab02Xenofontova.release.xcconfig */,
+				17B28B7F57FD71D092531B38 /* Pods-RedditReaderAppXenofontova.debug.xcconfig */,
+				40CB9AE9D242DCD2603F5244 /* Pods-RedditReaderAppXenofontova.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		2C678B80DCE638F08373EDD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39A980B2FA21CD71F847D349 /* Pods_RedditReaderAppXenofontova.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		89A113E327B5A9EE00B91319 = {
 			isa = PBXGroup;
 			children = (
-				89A113EE27B5A9EF00B91319 /* Lab02Xenofontova */,
+				89A113EE27B5A9EF00B91319 /* RedditReaderAppXenofontova */,
 				89A113ED27B5A9EF00B91319 /* Products */,
 				24C8C6F2B44C176A79B8D3F2 /* Pods */,
-				A28617AC7BC208917FC12F4D /* Frameworks */,
+				2C678B80DCE638F08373EDD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		89A113ED27B5A9EF00B91319 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				89A113EC27B5A9EF00B91319 /* Lab02Xenofontova.app */,
+				89A113EC27B5A9EF00B91319 /* RedditReaderAppXenofontova.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		89A113EE27B5A9EF00B91319 /* Lab02Xenofontova */ = {
+		89A113EE27B5A9EF00B91319 /* RedditReaderAppXenofontova */ = {
 			isa = PBXGroup;
 			children = (
 				89A1141027BC316F00B91319 /* Images */,
@@ -87,7 +95,7 @@
 				89A113F327B5A9EF00B91319 /* PostViewController.swift */,
 				89A113FD27B5A9F500B91319 /* Info.plist */,
 			);
-			path = Lab02Xenofontova;
+			path = RedditReaderAppXenofontova;
 			sourceTree = "<group>";
 		};
 		89A1140327B5B44100B91319 /* App */ = {
@@ -127,34 +135,26 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		A28617AC7BC208917FC12F4D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				752569F7337F4683B3E0DA99 /* Pods_Lab02Xenofontova.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		89A113EB27B5A9EE00B91319 /* Lab02Xenofontova */ = {
+		89A113EB27B5A9EE00B91319 /* RedditReaderAppXenofontova */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 89A1140027B5A9F500B91319 /* Build configuration list for PBXNativeTarget "Lab02Xenofontova" */;
+			buildConfigurationList = 89A1140027B5A9F500B91319 /* Build configuration list for PBXNativeTarget "RedditReaderAppXenofontova" */;
 			buildPhases = (
-				3416A29391A465A53B1366D1 /* [CP] Check Pods Manifest.lock */,
+				6BCC9BE16576CCB5D7AE1A54 /* [CP] Check Pods Manifest.lock */,
 				89A113E827B5A9EE00B91319 /* Sources */,
 				89A113E927B5A9EE00B91319 /* Frameworks */,
 				89A113EA27B5A9EE00B91319 /* Resources */,
-				553005D2F74BF490FFB1A2A1 /* [CP] Embed Pods Frameworks */,
+				4A000704DB98D9EB9449874C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Lab02Xenofontova;
+			name = RedditReaderAppXenofontova;
 			productName = Lab02Xenofontova;
-			productReference = 89A113EC27B5A9EF00B91319 /* Lab02Xenofontova.app */;
+			productReference = 89A113EC27B5A9EF00B91319 /* RedditReaderAppXenofontova.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -172,7 +172,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 89A113E727B5A9EE00B91319 /* Build configuration list for PBXProject "Lab02Xenofontova" */;
+			buildConfigurationList = 89A113E727B5A9EE00B91319 /* Build configuration list for PBXProject "RedditReaderAppXenofontova" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -185,7 +185,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				89A113EB27B5A9EE00B91319 /* Lab02Xenofontova */,
+				89A113EB27B5A9EE00B91319 /* RedditReaderAppXenofontova */,
 			);
 		};
 /* End PBXProject section */
@@ -205,7 +205,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3416A29391A465A53B1366D1 /* [CP] Check Pods Manifest.lock */ = {
+		4A000704DB98D9EB9449874C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RedditReaderAppXenofontova/Pods-RedditReaderAppXenofontova-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RedditReaderAppXenofontova/Pods-RedditReaderAppXenofontova-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RedditReaderAppXenofontova/Pods-RedditReaderAppXenofontova-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BCC9BE16576CCB5D7AE1A54 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -220,28 +237,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Lab02Xenofontova-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RedditReaderAppXenofontova-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		553005D2F74BF490FFB1A2A1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Lab02Xenofontova/Pods-Lab02Xenofontova-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Lab02Xenofontova/Pods-Lab02Xenofontova-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lab02Xenofontova/Pods-Lab02Xenofontova-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -400,7 +400,7 @@
 		};
 		89A1140127B5A9F500B91319 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 740A321A7FD96DFE5E988908 /* Pods-Lab02Xenofontova.debug.xcconfig */;
+			baseConfigurationReference = 17B28B7F57FD71D092531B38 /* Pods-RedditReaderAppXenofontova.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -408,7 +408,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VNU8KKW4GG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Lab02Xenofontova/Info.plist;
+				INFOPLIST_FILE = RedditReaderAppXenofontova/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -420,7 +420,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.ksenofontova.Lab02Xenofontova;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.ksenofontova.RedditReaderAppXenofontova;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -430,7 +430,7 @@
 		};
 		89A1140227B5A9F500B91319 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CC0D6B19230F3CA6C2DB28D /* Pods-Lab02Xenofontova.release.xcconfig */;
+			baseConfigurationReference = 40CB9AE9D242DCD2603F5244 /* Pods-RedditReaderAppXenofontova.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -438,7 +438,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VNU8KKW4GG;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Lab02Xenofontova/Info.plist;
+				INFOPLIST_FILE = RedditReaderAppXenofontova/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -450,7 +450,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.ksenofontova.Lab02Xenofontova;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.edu.ukma.ksenofontova.RedditReaderAppXenofontova;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -461,7 +461,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		89A113E727B5A9EE00B91319 /* Build configuration list for PBXProject "Lab02Xenofontova" */ = {
+		89A113E727B5A9EE00B91319 /* Build configuration list for PBXProject "RedditReaderAppXenofontova" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				89A113FE27B5A9F500B91319 /* Debug */,
@@ -470,7 +470,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		89A1140027B5A9F500B91319 /* Build configuration list for PBXNativeTarget "Lab02Xenofontova" */ = {
+		89A1140027B5A9F500B91319 /* Build configuration list for PBXNativeTarget "RedditReaderAppXenofontova" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				89A1140127B5A9F500B91319 /* Debug */,

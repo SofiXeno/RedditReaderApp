@@ -1,6 +1,6 @@
 //
 //  Post.swift
-//  Lab02Xenofontova
+//  RedditReaderAppXenofontova
 //
 //  Created by Софія Ксенофонтова  on 11.02.2022.
 //

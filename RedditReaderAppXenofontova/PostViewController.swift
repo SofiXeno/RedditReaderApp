@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Lab02Xenofontova
+//  RedditReaderAppXenofontova
 //
 //  Created by Софія Ксенофонтова  on 10.02.2022.
 //
@@ -29,7 +29,7 @@ class PostViewController: UIViewController {
 
         //https://www.reddit.com/r/ios/top.json?limit=1&after=t3_sshfj2
         //https://www.reddit.com/r/ios/top.json?limit=7&after=t3_sshfj2
-        var request = Request(str: "https://www.reddit.com/r/ios/top.json?limit=1")
+        var request = Request(str: "https://www.reddit.com/r/ios/top.json?limit=8")
         
         request.fetchPostData { post in
             

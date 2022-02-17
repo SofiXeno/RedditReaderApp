@@ -45,20 +45,12 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89A113EB27B5A9EE00B91319"
-            BuildableName = "Lab02Xenofontova.app"
-            BlueprintName = "Lab02Xenofontova"
-            ReferencedContainer = "container:Lab02Xenofontova.xcodeproj">
+            BuildableName = "RedditReaderAppXenofontova.app"
+            BlueprintName = "RedditReaderAppXenofontova"
+            ReferencedContainer = "container:RedditReaderAppXenofontova.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-   </LaunchAction>
-   <ProfileAction
-      buildConfiguration = "Release"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      savedToolIdentifier = ""
-      useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89A113EB27B5A9EE00B91319"
@@ -66,7 +58,23 @@
             BlueprintName = "Lab02Xenofontova"
             ReferencedContainer = "container:Lab02Xenofontova.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "89A113EB27B5A9EE00B91319"
+            BuildableName = "Lab02Xenofontova.app"
+            BlueprintName = "Lab02Xenofontova"
+            ReferencedContainer = "container:Lab02Xenofontova.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

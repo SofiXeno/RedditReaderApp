@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Lab02XenofontovaVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Lab02XenofontovaVersionString[];
+FOUNDATION_EXPORT double Pods_RedditReaderAppXenofontovaVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_RedditReaderAppXenofontovaVersionString[];
 
