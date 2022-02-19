@@ -72,7 +72,8 @@ struct ChildData: Decodable {
     let ups : Double
     let downs: Double
     let saved: Bool
-  
+    let subredditNamePrefixed: String
+    
     let preview: Preview?
     
     
@@ -87,6 +88,7 @@ struct ChildData: Decodable {
         self.ups = try values.decode(Double.self, forKey: .ups)
         self.downs = try values.decode(Double.self, forKey: .downs)
         self.saved = try values.decode(Bool.self, forKey: .saved)
+        self.subredditNamePrefixed = try values.decode(String.self, forKey: .subredditNamePrefixed)
         self.preview = try values.decodeIfPresent(Preview.self, forKey: .preview)
             
         
@@ -104,7 +106,7 @@ struct ChildData: Decodable {
           case saved = "saved"
           
           case preview = "preview"
-          
+          case subredditNamePrefixed = "subreddit_name_prefixed"
           
       }
 

@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		897BC76C27C0179E00F1EBE2 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BC76B27C0179E00F1EBE2 /* Const.swift */; };
+		897BC76E27C1595400F1EBE2 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BC76D27C1595300F1EBE2 /* Utilities.swift */; };
 		89A113F027B5A9EF00B91319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A113EF27B5A9EF00B91319 /* AppDelegate.swift */; };
 		89A113F227B5A9EF00B91319 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A113F127B5A9EF00B91319 /* SceneDelegate.swift */; };
-		89A113F427B5A9EF00B91319 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A113F327B5A9EF00B91319 /* PostViewController.swift */; };
+		89A113F427B5A9EF00B91319 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A113F327B5A9EF00B91319 /* PostDetailsViewController.swift */; };
 		89A113F727B5A9EF00B91319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A113F527B5A9EF00B91319 /* Main.storyboard */; };
 		89A113F927B5A9F500B91319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A113F827B5A9F500B91319 /* Assets.xcassets */; };
 		89A113FC27B5A9F500B91319 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A113FA27B5A9F500B91319 /* LaunchScreen.storyboard */; };
@@ -17,6 +19,8 @@
 		89A1140827B6810200B91319 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1140727B6810200B91319 /* Request.swift */; };
 		89A1140C27B69C8B00B91319 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1140B27B69C8B00B91319 /* Post.swift */; };
 		89A1140E27BC0CCA00B91319 /* 50-0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89A1140D27BC0CC900B91319 /* 50-0.jpg */; };
+		89F9975427BFF6BC0011C4C3 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F9975327BFF6BB0011C4C3 /* PostListViewController.swift */; };
+		89F9975627BFFF050011C4C3 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F9975527BFFF050011C4C3 /* PostTableViewCell.swift */; };
 		BC8054FCEFD55F26BEBA2D98 /* Pods_RedditReaderAppXenofontova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A980B2FA21CD71F847D349 /* Pods_RedditReaderAppXenofontova.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,10 +28,12 @@
 		17B28B7F57FD71D092531B38 /* Pods-RedditReaderAppXenofontova.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditReaderAppXenofontova.debug.xcconfig"; path = "Target Support Files/Pods-RedditReaderAppXenofontova/Pods-RedditReaderAppXenofontova.debug.xcconfig"; sourceTree = "<group>"; };
 		39A980B2FA21CD71F847D349 /* Pods_RedditReaderAppXenofontova.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedditReaderAppXenofontova.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40CB9AE9D242DCD2603F5244 /* Pods-RedditReaderAppXenofontova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditReaderAppXenofontova.release.xcconfig"; path = "Target Support Files/Pods-RedditReaderAppXenofontova/Pods-RedditReaderAppXenofontova.release.xcconfig"; sourceTree = "<group>"; };
+		897BC76B27C0179E00F1EBE2 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		897BC76D27C1595300F1EBE2 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		89A113EC27B5A9EF00B91319 /* RedditReaderAppXenofontova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReaderAppXenofontova.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A113EF27B5A9EF00B91319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A113F127B5A9EF00B91319 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		89A113F327B5A9EF00B91319 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		89A113F327B5A9EF00B91319 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		89A113F627B5A9EF00B91319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89A113F827B5A9F500B91319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89A113FB27B5A9F500B91319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +42,8 @@
 		89A1140727B6810200B91319 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		89A1140B27B69C8B00B91319 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		89A1140D27BC0CC900B91319 /* 50-0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "50-0.jpg"; sourceTree = "<group>"; };
+		89F9975327BFF6BB0011C4C3 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		89F9975527BFFF050011C4C3 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		897BC76A27C0178500F1EBE2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				897BC76B27C0179E00F1EBE2 /* Const.swift */,
+				897BC76D27C1595300F1EBE2 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		89A113E327B5A9EE00B91319 = {
 			isa = PBXGroup;
 			children = (
@@ -88,12 +105,15 @@
 		89A113EE27B5A9EF00B91319 /* RedditReaderAppXenofontova */ = {
 			isa = PBXGroup;
 			children = (
+				897BC76A27C0178500F1EBE2 /* Utilities */,
 				89A1141027BC316F00B91319 /* Images */,
 				89A1140F27BC313900B91319 /* Models */,
 				89A1140427B5B81100B91319 /* Views */,
 				89A1140327B5B44100B91319 /* App */,
-				89A113F327B5A9EF00B91319 /* PostViewController.swift */,
+				89A113F327B5A9EF00B91319 /* PostDetailsViewController.swift */,
+				89F9975527BFFF050011C4C3 /* PostTableViewCell.swift */,
 				89A113FD27B5A9F500B91319 /* Info.plist */,
+				89F9975327BFF6BB0011C4C3 /* PostListViewController.swift */,
 			);
 			path = RedditReaderAppXenofontova;
 			sourceTree = "<group>";
@@ -251,12 +271,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89F9975427BFF6BC0011C4C3 /* PostListViewController.swift in Sources */,
 				89A1140827B6810200B91319 /* Request.swift in Sources */,
-				89A113F427B5A9EF00B91319 /* PostViewController.swift in Sources */,
+				89A113F427B5A9EF00B91319 /* PostDetailsViewController.swift in Sources */,
+				89F9975627BFFF050011C4C3 /* PostTableViewCell.swift in Sources */,
 				89A1140627B5B85300B91319 /* PostDto.swift in Sources */,
 				89A1140C27B69C8B00B91319 /* Post.swift in Sources */,
 				89A113F027B5A9EF00B91319 /* AppDelegate.swift in Sources */,
 				89A113F227B5A9EF00B91319 /* SceneDelegate.swift in Sources */,
+				897BC76E27C1595400F1EBE2 /* Utilities.swift in Sources */,
+				897BC76C27C0179E00F1EBE2 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
