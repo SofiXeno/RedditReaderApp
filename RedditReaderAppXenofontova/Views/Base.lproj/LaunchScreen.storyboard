@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qyh-Oi-ebl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="White-Reddit-Logo-1024x943" translatesAutoresizingMaskIntoConstraints="NO" id="qyh-Oi-ebl">
                                 <rect key="frame" x="74" y="347" width="266" height="212"/>
                             </imageView>
                         </subviews>
@@ -36,4 +36,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="White-Reddit-Logo-1024x943" width="1024" height="943"/>
+    </resources>
 </document>
