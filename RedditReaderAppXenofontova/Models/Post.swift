@@ -22,6 +22,8 @@ struct Post {
     let saved: Bool
     let subredditNamePrefixed: String
     
+    
+    
     init(){
         
         self.username = ""

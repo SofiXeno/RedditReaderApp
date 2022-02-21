@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		897BC76C27C0179E00F1EBE2 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BC76B27C0179E00F1EBE2 /* Const.swift */; };
 		897BC76E27C1595400F1EBE2 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BC76D27C1595300F1EBE2 /* Utilities.swift */; };
+		897BC77027C2C46500F1EBE2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897BC76F27C2C46400F1EBE2 /* Logger.swift */; };
 		89A113F027B5A9EF00B91319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A113EF27B5A9EF00B91319 /* AppDelegate.swift */; };
 		89A113F227B5A9EF00B91319 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A113F127B5A9EF00B91319 /* SceneDelegate.swift */; };
 		89A113F427B5A9EF00B91319 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A113F327B5A9EF00B91319 /* PostDetailsViewController.swift */; };
@@ -30,6 +31,7 @@
 		40CB9AE9D242DCD2603F5244 /* Pods-RedditReaderAppXenofontova.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditReaderAppXenofontova.release.xcconfig"; path = "Target Support Files/Pods-RedditReaderAppXenofontova/Pods-RedditReaderAppXenofontova.release.xcconfig"; sourceTree = "<group>"; };
 		897BC76B27C0179E00F1EBE2 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		897BC76D27C1595300F1EBE2 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		897BC76F27C2C46400F1EBE2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		89A113EC27B5A9EF00B91319 /* RedditReaderAppXenofontova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReaderAppXenofontova.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A113EF27B5A9EF00B91319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A113F127B5A9EF00B91319 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				897BC76B27C0179E00F1EBE2 /* Const.swift */,
 				897BC76D27C1595300F1EBE2 /* Utilities.swift */,
+				897BC76F27C2C46400F1EBE2 /* Logger.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89F9975427BFF6BC0011C4C3 /* PostListViewController.swift in Sources */,
+				897BC77027C2C46500F1EBE2 /* Logger.swift in Sources */,
 				89A1140827B6810200B91319 /* Request.swift in Sources */,
 				89A113F427B5A9EF00B91319 /* PostDetailsViewController.swift in Sources */,
 				89F9975627BFFF050011C4C3 /* PostTableViewCell.swift in Sources */,

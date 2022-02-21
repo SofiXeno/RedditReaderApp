@@ -17,13 +17,15 @@ class PostListViewController: UIViewController {
     // MARK: Properties
     private var postsList : [Post] = []
     var selectedPost: Post = Post()
-    
+    var logger : Logger = Logger()
+   
     
     // MARK: Lifecycle
     override func viewDidLoad() {
 
-    
-        var request = Request(str: Const.baseUrl)
+        self.postsListTableView.showsVerticalScrollIndicator = true
+        
+        if let request = Request(str: Const.baseUrl) {
         
         request.fetchPostData { (posts) in
 
@@ -35,8 +37,10 @@ class PostListViewController: UIViewController {
                 
                 self.postsList = posts
                 self.postsListTableView.reloadData()
- 
+
             }
+        }
+            
         }
  
         super.viewDidLoad()
@@ -48,11 +52,8 @@ class PostListViewController: UIViewController {
     
     // MARK: Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         let desrinationVC = segue.destination as! PostDetailsViewController
-        
         desrinationVC.post = self.selectedPost
-        
     }
  
 }
@@ -80,9 +81,60 @@ extension PostListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         self.selectedPost = postsList[indexPath.row]
-   
         self.performSegue(withIdentifier: Const.segueFromPostsToOneDetailed, sender: self)
         
     }
+    
+
+    private func createSpinnerFooter() -> UIView{
+        
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        let spinner = UIActivityIndicatorView()
+        spinner.center = footerView.center
+        spinner.color = .cyan
+        footerView.addSubview(spinner)
+        spinner.startAnimating()
+        return footerView
     }
+    
+    
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        guard let const = Const.after
+        else {
+            
+            self.postsListTableView.tableFooterView = nil
+            logger.addMessage(message: "There is no data for loading :( ")
+            logger.printMessages()
+            return
+            
+        }
+        
+        let reloadUrl = "https://www.reddit.com/r/ios/top.json?limit=\(Const.numOfPortion)&after=\(const)"
+        
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+
+        if maximumOffset - currentOffset <= 5.0 {
+               
+            self.postsListTableView.tableFooterView = createSpinnerFooter()
+               
+            if let request = Request(str: reloadUrl) {
+                request.fetchPostData { (posts) in
+
+                   DispatchQueue.main.async {
+                      
+                       self.postsList.append(contentsOf: posts)
+                       self.postsListTableView.reloadData()
+            
+                   }
+               }
+            }
+    }
+
+}
+    
+    
+}
 

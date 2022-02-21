@@ -12,20 +12,25 @@ struct Request{
     let session: URLSession
     let url : URL
     
-    init(str: String){
+    init?(str: String){
+        
+        guard let url = URL(string: str)
+        else { return nil }
+        
         self.session = URLSession(configuration: .default)
-        self.url = URL(string: str)!
+        self.url = url
     }
 
 
     func fetchPostData(completionHandler: @escaping ([Post]) -> Void ) {
    
         let dataTask = self.session.dataTask(with: url) { data, response, error in
-
+          
            guard let data = data
-           else {return}
+           else { return }
            do{
                let postDto = try JSONDecoder().decode(PostDto.self, from: data)
+               Const.after = postDto.data.after
                completionHandler(postDto.data.children.map{ x in
                    return Post(childData: x.data)
                })

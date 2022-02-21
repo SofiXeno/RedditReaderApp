@@ -25,6 +25,7 @@ class PostTableViewCell: UITableViewCell {
     // MARK: Cell configuration
     func config(from post: Post){
         
+        //arc4random_uniform(2) == 0
         Utilities.savePost(toSave: post.saved, bookmark: self.bookmark)
  
         self.usernameLabel.text = post.username

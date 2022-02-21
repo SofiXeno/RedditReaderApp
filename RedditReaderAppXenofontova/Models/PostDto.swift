@@ -27,16 +27,19 @@ struct PostDto: Decodable {
 struct Data: Decodable{
     
     let children: [Child]
+    let after : String?
     
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.children = try values.decode([Child].self, forKey: .children)
+        self.after = try values.decode(String?.self, forKey: .after)
        
     }
     
       enum CodingKeys: String, CodingKey {
           case children = "children"
+          case after = "after"
       }
     
     
