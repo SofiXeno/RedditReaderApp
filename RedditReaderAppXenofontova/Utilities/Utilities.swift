@@ -14,7 +14,6 @@ struct Utilities{
         
         if toSave {
             bookmark.image = UIImage(systemName: "bookmark.fill")?.withTintColor(.systemOrange)
-        
         }
     }
     
@@ -43,7 +42,34 @@ struct Utilities{
 
        return res
        
-       
    }
     
+ 
+    
 }
+
+protocol PostTableViewCellDelegate: AnyObject {
+    func share(url: String)
+}
+
+
+
+extension UIViewController : PostTableViewCellDelegate {
+    
+    func share(url: String){
+        
+        if let postUrl = URL(string: "\(Const.Url)\(url)") {
+            let objectsToShare: [Any] = [postUrl]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+
+            
+//                activityVC.popoverPresentationController?.sourceView = self.view
+            self.present(activityVC, animated: true, completion: nil)
+            
+            print("AAAAAAAAAAAA: \(postUrl)")
+            }
+    }
+        
+        
+    }
+

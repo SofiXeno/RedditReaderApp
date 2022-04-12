@@ -20,6 +20,7 @@
 		89A1140827B6810200B91319 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1140727B6810200B91319 /* Request.swift */; };
 		89A1140C27B69C8B00B91319 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A1140B27B69C8B00B91319 /* Post.swift */; };
 		89A1140E27BC0CCA00B91319 /* 50-0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89A1140D27BC0CC900B91319 /* 50-0.jpg */; };
+		89C5DBFD2805BB010081AC1C /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 89C5DBFC2805BB010081AC1C /* posts.json */; };
 		89F9975427BFF6BC0011C4C3 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F9975327BFF6BB0011C4C3 /* PostListViewController.swift */; };
 		89F9975627BFFF050011C4C3 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F9975527BFFF050011C4C3 /* PostTableViewCell.swift */; };
 		BC8054FCEFD55F26BEBA2D98 /* Pods_RedditReaderAppXenofontova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A980B2FA21CD71F847D349 /* Pods_RedditReaderAppXenofontova.framework */; };
@@ -44,6 +45,7 @@
 		89A1140727B6810200B91319 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		89A1140B27B69C8B00B91319 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		89A1140D27BC0CC900B91319 /* 50-0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "50-0.jpg"; sourceTree = "<group>"; };
+		89C5DBFC2805BB010081AC1C /* posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
 		89F9975327BFF6BB0011C4C3 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		89F9975527BFFF050011C4C3 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 				89F9975527BFFF050011C4C3 /* PostTableViewCell.swift */,
 				89A113FD27B5A9F500B91319 /* Info.plist */,
 				89F9975327BFF6BB0011C4C3 /* PostListViewController.swift */,
+				89C5DBFC2805BB010081AC1C /* posts.json */,
 			);
 			path = RedditReaderAppXenofontova;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89A113FC27B5A9F500B91319 /* LaunchScreen.storyboard in Resources */,
+				89C5DBFD2805BB010081AC1C /* posts.json in Resources */,
 				89A1140E27BC0CCA00B91319 /* 50-0.jpg in Resources */,
 				89A113F927B5A9F500B91319 /* Assets.xcassets in Resources */,
 				89A113F727B5A9EF00B91319 /* Main.storyboard in Resources */,

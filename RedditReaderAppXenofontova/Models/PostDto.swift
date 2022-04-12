@@ -76,7 +76,7 @@ struct ChildData: Decodable {
     let downs: Double
     let saved: Bool
     let subredditNamePrefixed: String
-    
+    let link: String
     let preview: Preview?
     
     
@@ -93,13 +93,14 @@ struct ChildData: Decodable {
         self.saved = try values.decode(Bool.self, forKey: .saved)
         self.subredditNamePrefixed = try values.decode(String.self, forKey: .subredditNamePrefixed)
         self.preview = try values.decodeIfPresent(Preview.self, forKey: .preview)
+        self.link = try values.decode(String.self, forKey: .link)
             
         
     }
     
     
       enum CodingKeys: String, CodingKey {
-          case username = "author_fullname"
+          case username = "author"
           case domain = "domain"
           case timePassed = "created"
           case title = "title"
@@ -110,6 +111,7 @@ struct ChildData: Decodable {
           
           case preview = "preview"
           case subredditNamePrefixed = "subreddit_name_prefixed"
+          case link = "permalink"
           
       }
 

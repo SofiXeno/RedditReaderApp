@@ -9,8 +9,9 @@ import UIKit
 import SDWebImage
 
 
-class PostTableViewCell: UITableViewCell {
-    
+class PostTableViewCell: UITableViewCell{
+
+
     
     // MARK: IBOutlets
     @IBOutlet private weak var usernameLabel: UILabel!
@@ -20,8 +21,17 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var imagePost: UIImageView!
     @IBOutlet private weak var bookmark: UIImageView!
-    
 
+    @IBAction func shareAction(_ sender: Any) {
+
+        self.delegate?.share(url: self.selectedPostUrl)
+    }
+    
+    
+    // MARK: Properties
+    var selectedPostUrl: String = ""
+    weak var delegate : PostTableViewCellDelegate?
+    
     // MARK: Cell configuration
     func config(from post: Post){
         
@@ -34,8 +44,8 @@ class PostTableViewCell: UITableViewCell {
         self.timePassedLabel.text = post.timePassed
         self.ratingLabel.text = String(post.rating)
         self.imagePost.sd_setImage(with: URL(string: post.imageUrl), placeholderImage: UIImage(named: "50-0.jpg"))
-        
-    }
+        self.selectedPostUrl = post.postUrl
 
+}
 
 }

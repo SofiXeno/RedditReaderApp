@@ -18,8 +18,8 @@ class PostListViewController: UIViewController {
     private var postsList : [Post] = []
     var selectedPost: Post = Post()
     var logger : Logger = Logger()
-   
     
+
     // MARK: Lifecycle
     override func viewDidLoad() {
 
@@ -37,7 +37,6 @@ class PostListViewController: UIViewController {
                 
                 self.postsList = posts
                 self.postsListTableView.reloadData()
-
             }
         }
             
@@ -47,7 +46,7 @@ class PostListViewController: UIViewController {
    
         self.postsListTableView.dataSource = self
         self.postsListTableView.delegate = self
-        
+       
     }
     
     // MARK: Prepare for segue
@@ -73,6 +72,8 @@ extension PostListViewController: UITableViewDataSource, UITableViewDelegate {
 
         cell.selectionStyle = .none
         cell.config(from: self.postsList[indexPath.row])
+        
+        cell.delegate = self     
         
         return cell
     }

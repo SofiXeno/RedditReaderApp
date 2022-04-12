@@ -21,6 +21,7 @@ struct Post {
     let rating : Double
     let saved: Bool
     let subredditNamePrefixed: String
+    let postUrl: String
     
     
     
@@ -35,7 +36,7 @@ struct Post {
         self.rating = 0
         self.saved = true
         self.subredditNamePrefixed = ""
-        
+        self.postUrl = ""
         
     }
     
@@ -52,7 +53,7 @@ struct Post {
         self.rating = childData.ups + childData.downs
         self.saved = childData.saved
         self.subredditNamePrefixed = childData.subredditNamePrefixed
-        
+        self.postUrl = childData.link
         
         
     }

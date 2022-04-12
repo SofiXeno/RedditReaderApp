@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 struct Const{
     
     static let cellReuseId = "post_cell"
@@ -20,7 +18,8 @@ struct Const{
     
     //https://www.reddit.com/r/ios/top.json?limit=1&after=t3_sshfj2
     //https://www.reddit.com/r/ios/top.json?limit=7&after=t3_sshfj2
-    static let baseUrl = "https://www.reddit.com/r/ios/top.json?limit=\(Const.numOfPortion)"
+    static let baseUrl = "\(Url)/r/ios/top.json?limit=\(Const.numOfPortion)"
    
+    static let Url = "https://www.reddit.com"
 
 }

@@ -19,9 +19,17 @@ class PostDetailsViewController: UIViewController {
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var image: UIImageView!
     @IBOutlet private weak var bookmark: UIImageView!
+
+    // MARK: IBActions
+    @IBAction func share(_ sender: Any) {
+        self.share(url: self.post.postUrl)
+        }
+        
+
     
     // MARK: Properties
     var post: Post = Post()
+
     
     
     // MARK: Lifecycle
@@ -35,11 +43,12 @@ class PostDetailsViewController: UIViewController {
         self.timePassedLabel.text = post.timePassed
         self.ratingLabel.text = String(post.rating)
         self.image.sd_setImage(with: URL(string: post.imageUrl), placeholderImage: UIImage(named: "50-0.jpg"))
-
+    
         super.viewDidLoad()
     
     }
-   
+    
+
 }
 
 
