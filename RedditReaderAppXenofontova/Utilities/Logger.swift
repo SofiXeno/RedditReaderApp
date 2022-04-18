@@ -30,6 +30,11 @@ struct Logger{
             
         }
         
+    }
+    
+    func printLastMessage(){
+        
+        if !messages.isEmpty {print("Logging ---- \(messages.last ?? "logs are empty")")}
         
     }
     

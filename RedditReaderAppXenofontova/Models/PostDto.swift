@@ -78,6 +78,7 @@ struct ChildData: Decodable {
     let subredditNamePrefixed: String
     let link: String
     let preview: Preview?
+    let id: String
     
     
     
@@ -94,6 +95,7 @@ struct ChildData: Decodable {
         self.subredditNamePrefixed = try values.decode(String.self, forKey: .subredditNamePrefixed)
         self.preview = try values.decodeIfPresent(Preview.self, forKey: .preview)
         self.link = try values.decode(String.self, forKey: .link)
+        self.id = try values.decode(String.self, forKey: .id)
             
         
     }
@@ -112,6 +114,7 @@ struct ChildData: Decodable {
           case preview = "preview"
           case subredditNamePrefixed = "subreddit_name_prefixed"
           case link = "permalink"
+          case id = "id"
           
       }
 

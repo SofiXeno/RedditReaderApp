@@ -10,66 +10,123 @@ import UIKit
 
 struct Utilities{
     
-    static func savePost(toSave: Bool, bookmark: UIImageView){
+    static func drawBookmark(bookmark: inout UIButton, post: Post) -> UIButton {
         
-        if toSave {
-            bookmark.image = UIImage(systemName: "bookmark.fill")?.withTintColor(.systemOrange)
-        }
+        post.saved ? bookmark.setImage(UIImage(systemName: "bookmark.fill"), for: .normal) : bookmark.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        
+        return bookmark
     }
     
+    
     static func calcDate(created: Double) -> String {
-       
-       var resNum : Int
-       var res: String = ""
-       
-       let calendar = Calendar.current
-       let hoursViaKyiv = (calendar.component(.hour, from: Date(timeIntervalSince1970: created)) - Const.utcKyiv)
-       
-
-       if hoursViaKyiv <= 0 {
-
-           resNum =  calendar.component(.minute, from: Date(timeIntervalSince1970: created))
-           res.append(String(resNum))
-           res.append(" m.")
-       }
-       else{
-           
-           resNum = hoursViaKyiv
-           res.append(String(resNum))
-           res.append(" h.")
-       }
-       
-
-       return res
-       
-   }
+        
+        var resNum : Int
+        var res: String = ""
+        
+        let calendar = Calendar.current
+        let hoursViaKyiv = (calendar.component(.hour, from: Date(timeIntervalSince1970: created)) - Const.utcKyiv)
+        
+        
+        if hoursViaKyiv <= 0 {
+            
+            resNum =  calendar.component(.minute, from: Date(timeIntervalSince1970: created))
+            res.append(String(resNum))
+            res.append(" m.")
+        }
+        else{
+            
+            resNum = hoursViaKyiv
+            res.append(String(resNum))
+            res.append(" h.")
+        }
+        
+        
+        return res
+        
+    }
     
- 
     
-}
-
-protocol PostTableViewCellDelegate: AnyObject {
-    func share(url: String)
-}
-
-
-
-extension UIViewController : PostTableViewCellDelegate {
-    
-    func share(url: String){
+    static func sharePost(url: String, vc: UIViewController){
         
         if let postUrl = URL(string: "\(Const.Url)\(url)") {
             let objectsToShare: [Any] = [postUrl]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            vc.present(activityVC, animated: true, completion: nil)
+            
+        }
+        
+    }
+//    
+//    static func savePostAction(post: inout Post, bookmark: UIButton) {
+//
+//        if !post.saved {
+//            bookmark.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+//            Utilities.savePost(post: &post)
+//        } else {
+//            Utilities.deletePost(post: &post)
+//            bookmark.setImage(UIImage(systemName: "bookmark"), for: .normal)
+//        }
+//        print("Save state CELL    \(post.saved)")
+//
+//        post.saved.toggle()
+//
+//    }
+    
 
-            
-//                activityVC.popoverPresentationController?.sourceView = self.view
-            self.present(activityVC, animated: true, completion: nil)
-            
-            print("AAAAAAAAAAAA: \(postUrl)")
+
+    static func savePost(post: Post){
+        if !PostRepositorySingleton.shared.savedPosts.contains(post) {
+            PostRepositorySingleton.shared.savedPosts.append(post)
+       
+            Utilities.updatePostIsSavedValue(post: post, value: true)
+
+        }
+    }
+    
+    
+    static func deletePost(post: Post){
+        
+            for (index, element) in PostRepositorySingleton.shared.savedPosts.enumerated() {
+                if (post.id == element.id) {
+        
+                    PostRepositorySingleton.shared.savedPosts.remove(at: index)
+                }
             }
+
+        Utilities.updatePostIsSavedValue(post: post, value: false)
+
     }
-        
-        
-    }
+    
+    
+    static func updatePostIsSavedValue(post: Post, value: Bool){
+            PostRepositorySingleton.shared.allPosts = PostRepositorySingleton.shared.allPosts.map { elem in
+
+                var tempPost = elem
+
+                if(tempPost.id == post.id) {
+                    tempPost.saved = value
+                }
+                return tempPost
+            }
+            
+            PostRepositorySingleton.shared.currentPosts = PostRepositorySingleton.shared.currentPosts.map { elem in
+                
+                var tempPost = elem
+                
+                if(tempPost.id == post.id) {
+                    tempPost.saved = value
+                }
+                return tempPost
+            }
+    
+            }
+    
+    
+    
+    
+        }
+    
+    
+
+
 
