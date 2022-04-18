@@ -30,11 +30,8 @@ class PostTableViewCell: UITableViewCell{
     
     @IBAction func savePostAction(_ sender: Any) {
         
-        //        Utilities.savePostAction(post: &self.post, bookmark: self.bookmark )
-        
-        
         self.delegate?.savePost(post: &self.post, bookmark: self.bookmark)
-  
+        
     }
     
     
@@ -49,9 +46,9 @@ class PostTableViewCell: UITableViewCell{
     // MARK: Cell configuration
     func config(from post: Post){
         
-
+        
         self.post = post
-    
+        
         self.usernameLabel.text = post.username
         self.domainLabel.text = post.domain
         self.titleLabel.text = post.title
@@ -60,12 +57,6 @@ class PostTableViewCell: UITableViewCell{
         self.bookmark = Utilities.drawBookmark(bookmark: &self.bookmark, post: self.post)
         self.imagePost.sd_setImage(with: URL(string: post.imageUrl), placeholderImage: UIImage(named: "50-0.jpg"))
         self.selectedPostUrl = post.postUrl
-        
-        
-        
-        
-        
-        
         
     }
     

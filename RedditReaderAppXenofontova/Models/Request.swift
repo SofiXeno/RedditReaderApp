@@ -1,11 +1,12 @@
 //
-//  BaseRequest.swift
+//  Request.swift
 //  RedditReaderAppXenofontova
 //
-//  Created by Софія Ксенофонтова  on 11.02.2022.
+//  Created by Софія Ксенофонтова  on 18.04.2022.
 //
 
 import Foundation
+
 
 struct Request{
 

@@ -56,21 +56,20 @@ struct Utilities{
         }
         
     }
-//    
-//    static func savePostAction(post: inout Post, bookmark: UIButton) {
-//
-//        if !post.saved {
-//            bookmark.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
-//            Utilities.savePost(post: &post)
-//        } else {
-//            Utilities.deletePost(post: &post)
-//            bookmark.setImage(UIImage(systemName: "bookmark"), for: .normal)
-//        }
-//        print("Save state CELL    \(post.saved)")
-//
-//        post.saved.toggle()
-//
-//    }
+    
+    
+    static func savePostAction(post: inout Post, bookmark: UIButton) {
+
+        post.saved.toggle()
+      
+        if post.saved {
+            bookmark.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+            Utilities.savePost(post: post)
+        } else {
+            bookmark.setImage(UIImage(systemName: "bookmark"), for: .normal)
+            Utilities.deletePost(post: post)
+        }
+    }
     
 
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-//UISearchResultsUpdating
+
 class PostListViewController: UIViewController {
     
     
@@ -19,25 +19,25 @@ class PostListViewController: UIViewController {
     
     // MARK: IBActions
     @IBAction func showSavedPostsAction(_ sender: Any) {
-
+        
         self.updateControllerUI()
-
+        
     }
     
     
     func updateControllerUI(){
         
-
+        
         self.controllerIsInSavedState.toggle()
         print("STATE",   self.controllerIsInSavedState)
-   
+        
         if self.controllerIsInSavedState{ //true
             
             self.postsListTableView.tableFooterView = nil
             PostRepositorySingleton.shared.currentPosts = PostRepositorySingleton.shared.savedPosts//saved posts
             self.savedPostsListButton.tintColor = UIColor.systemOrange
             self.searchController.searchBar.isHidden = false
-           
+            
             
         }
         else{
@@ -47,11 +47,11 @@ class PostListViewController: UIViewController {
         }
         
         print("UPDATE UI",   PostRepositorySingleton.shared.currentPosts)
-
+        
         self.postsListTableView.reloadData()
         
         if(!PostRepositorySingleton.shared.savedPosts.isEmpty){self.postsListTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: true)}
-
+        
     }
     
     
@@ -74,7 +74,7 @@ class PostListViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     
-                   
+                    
                     
                     if (!posts.isEmpty) {
                         self.navItem.title = posts[0].subredditNamePrefixed
@@ -83,7 +83,7 @@ class PostListViewController: UIViewController {
                     PostRepositorySingleton.shared.currentPosts = posts.map{ post in
                         var postTemp = post
                         for savedPost in PostRepositorySingleton.shared.savedPosts{
-
+                            
                             if (savedPost.id == post.id) {
                                 postTemp.saved = true
                                 
@@ -91,10 +91,10 @@ class PostListViewController: UIViewController {
                         }
                         return postTemp
                     }
-          
+                    
                     
                     PostRepositorySingleton.shared.allPosts.append(contentsOf: PostRepositorySingleton.shared.currentPosts)
-
+                    
                     
                     self.postsListTableView.reloadData()
                     
@@ -104,7 +104,7 @@ class PostListViewController: UIViewController {
         }
         
         createSearchController()
-
+        
         super.viewDidLoad()
         
         searchController.searchBar.isHidden = true
@@ -113,35 +113,35 @@ class PostListViewController: UIViewController {
         
         self.postsListTableView.dataSource = self
         self.postsListTableView.delegate = self
-  
+        
     }
     
     
     func createSearchController(){
-            
-            
-            self.searchController = UISearchController(searchResultsController: nil)
-          
-            self.searchController.searchResultsUpdater = self
-            self.searchController.searchBar.sizeToFit()
-            self.searchController.searchBar.searchTextField.textColor = .green
-            self.searchController.searchBar.barTintColor = UIColor(named: "MainColor")
-            self.postsListTableView.tableHeaderView = searchController.searchBar
-            
-            
-            self.searchController.definesPresentationContext = true
-       
-        }
+        
+        
+        self.searchController = UISearchController(searchResultsController: nil)
+        
+        self.searchController.searchResultsUpdater = self
+        self.searchController.searchBar.sizeToFit()
+        self.searchController.searchBar.searchTextField.textColor = .green
+        self.searchController.searchBar.barTintColor = UIColor(named: "MainColor")
+        self.postsListTableView.tableHeaderView = searchController.searchBar
+        
+        
+        self.searchController.definesPresentationContext = true
+        
+    }
     
     
     override func viewWillAppear(_ animated: Bool) {
         if self.controllerIsInSavedState {
             self.postsListTableView.reloadData()
         }
-
+        
     }
     
- 
+    
     
     // MARK: Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -162,26 +162,23 @@ class PostListViewController: UIViewController {
 extension PostListViewController: UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-            
-            guard let searchText = searchController.searchBar.text else {
-                 return
-             }
-            
-            let filteredPosts = PostRepositorySingleton.shared.savedPosts.filter({$0.title.lowercased().contains(searchText.lowercased())})
-            PostRepositorySingleton.shared.currentPosts = searchText != "" ? filteredPosts : PostRepositorySingleton.shared.savedPosts
-           
-            self.postsListTableView.reloadData()
-            
-            if !PostRepositorySingleton.shared.currentPosts.isEmpty{ self.postsListTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: true) }
-            
+        
+        guard let searchText = searchController.searchBar.text else {
+            return
         }
- 
+        
+        let filteredPosts = PostRepositorySingleton.shared.savedPosts.filter({$0.title.lowercased().contains(searchText.lowercased())})
+        PostRepositorySingleton.shared.currentPosts = searchText != "" ? filteredPosts : PostRepositorySingleton.shared.savedPosts
+        
+        self.postsListTableView.reloadData()
+        
+        if !PostRepositorySingleton.shared.currentPosts.isEmpty{ self.postsListTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .none, animated: true) }
+        
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        if self.controllerIsInSavedState  {
-//            PostRepositorySingleton.shared.currentPosts = PostRepositorySingleton.shared.savedPosts
-//        }
         
         return PostRepositorySingleton.shared.currentPosts.count
         
@@ -189,10 +186,6 @@ extension PostListViewController: UITableViewDataSource, UITableViewDelegate, UI
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        if self.controllerIsInSavedState {
-//            PostRepositorySingleton.shared.currentPosts = PostRepositorySingleton.shared.savedPosts
-//        }
-
         let cell = tableView.dequeueReusableCell(withIdentifier: Const.cellReuseId, for: indexPath) as! PostTableViewCell
         
         cell.selectionStyle = .none
@@ -205,10 +198,7 @@ extension PostListViewController: UITableViewDataSource, UITableViewDelegate, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        if self.controllerIsInSavedState  {
-//            PostRepositorySingleton.shared.currentPosts = PostRepositorySingleton.shared.savedPosts
-//        }
-//
+        
         self.selectedPost = PostRepositorySingleton.shared.currentPosts[indexPath.row]
         self.performSegue(withIdentifier: Const.segueFromPostsToOneDetailed, sender: self)
         
@@ -243,7 +233,7 @@ extension PostListViewController: UITableViewDataSource, UITableViewDelegate, UI
                 
             }
             
-         
+            
             let reloadUrl = "https://www.reddit.com/r/ios/top.json?limit=\(Const.numOfPortion)&after=\(const)"
             
             let currentOffset = scrollView.contentOffset.y
@@ -261,7 +251,7 @@ extension PostListViewController: UITableViewDataSource, UITableViewDelegate, UI
                             let temp = posts.map{ post -> Post in
                                 var postTemp = post
                                 for savedPost in PostRepositorySingleton.shared.savedPosts{
-
+                                    
                                     if (savedPost.id == post.id) {
                                         postTemp.saved = true
                                         
@@ -271,9 +261,9 @@ extension PostListViewController: UITableViewDataSource, UITableViewDelegate, UI
                             }
                             
                             PostRepositorySingleton.shared.currentPosts.append(contentsOf: temp)
-                      
+                            
                             PostRepositorySingleton.shared.allPosts.append(contentsOf: temp)
-                   
+                            
                             self.postsListTableView.reloadData()
                             
                         }
@@ -286,7 +276,7 @@ extension PostListViewController: UITableViewDataSource, UITableViewDelegate, UI
             self.postsListTableView.tableFooterView?.isHidden = true
         }
     }
-
+    
 }
 
 
@@ -295,51 +285,22 @@ extension PostListViewController: UITableViewDataSource, UITableViewDelegate, UI
 
 
 extension PostListViewController : PostTableViewCellDelegate {
-   
+    
     
     func sharePost(url: String){
         Utilities.sharePost(url: url, vc: self)
     }
     
     func savePost(post: inout Post, bookmark: UIButton) {
-     
-        post.saved.toggle()
-      
-        if post.saved {
-            bookmark.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
-            Utilities.savePost(post: post)
-        } else {
-            bookmark.setImage(UIImage(systemName: "bookmark"), for: .normal)
-            Utilities.deletePost(post: post)
-
-           
-        }
         
-        print("PostRepositorySingleton.shared.currentPosts@@@@@@         ",PostRepositorySingleton.shared.currentPosts)
-        
-        
+        Utilities.savePostAction(post: &post, bookmark: bookmark)
         if self.controllerIsInSavedState {
             PostRepositorySingleton.shared.currentPosts = PostRepositorySingleton.shared.savedPosts
-            }
-
+        }
+        
         self.postsListTableView.reloadData()
-  
         
-   
-       // print("Save state CELL    \(post.saved)")
-                
         
-//        print("Post in cell  \(post)")
-//        
-//        
-//        
-//        print("AAAAAAA   \(PostRepositorySingleton.shared.savedPosts)")
-        
-      
-
-     //   print("BBBBB   \(PostRepositorySingleton.shared.currentPosts)")
-        
-       
     }
     
 }

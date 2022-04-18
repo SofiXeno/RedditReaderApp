@@ -23,103 +23,12 @@ class PostRepositorySingleton{
     var after: String? = ""
     
     var reloadUrl = ""
-    // let requestLoadMore = Request(str: "https://www.reddit.com/r/ios/top.json?limit=\(Const.numOfPortion)&after=\(Const.after)")
-    
+  
     var navItemTitle : String = ""
     
     static let shared = PostRepositorySingleton()
     private init() {}
     
-    
-//    func checkSaved(posts: [Post] ){
-//
-//        self.currentPosts = posts.map{ post in
-//
-//            for savedPost in self.savedPosts{
-//
-//                if (savedPost == post) {
-//                    post.saved = true
-//                }
-//            }
-//            return post
-//        }
-//        self.allPosts.append(contentsOf: self.currentPosts)
-//
-//
-//    }
-    
-    
-    
-//    func firstLoad(update: @escaping () -> Void) {
-//
-//
-//        guard let request = requestMain else{
-//            return
-//        }
-//
-//        request.fetchPostData { posts in
-//
-//            DispatchQueue.main.async {
-//
-//                if (!posts.isEmpty) {
-//                    self.navItemTitle = posts[0].subredditNamePrefixed
-//                    print("self.navItemTitle \(self.navItemTitle)")
-//                }
-//
-//                self.currentPosts = posts.map{ post in
-//                    var postTemp = post
-//                    for savedPost in self.savedPosts{
-//
-//                        if (savedPost == post) {
-//                            postTemp.saved = true
-//                        }
-//                    }
-//                    return post
-//                }
-//                self.allPosts.append(contentsOf: self.currentPosts)
-//                update()
-//
-////                                    PostRepositorySingleton.shared.allPosts = posts
-////                                    PostRepositorySingleton.shared.currentPosts = PostRepositorySingleton.shared.allPosts
-////
-////                                    self.postsListTableView.reloadData()
-//
-//            }
-//        }
-//    }
-
-    
-//    func loadMore(after: String){
-//        
-//        //self.after = Const.after
-//        self.reloadUrl = "https://www.reddit.com/r/ios/top.json?limit=\(Const.numOfPortion)&after=\(after)"
-//        
-//        if let request = Request(str: self.reloadUrl) {
-//            request.fetchPostData { posts in
-//                
-//                DispatchQueue.main.async {
-//                    
-//        
-//                    self.allPosts = posts.map{ post in
-//                        var postTemp = post
-//                        for savedPost in self.savedPosts{
-//                            
-//                            if (savedPost == post) {
-//                                postTemp.saved = true
-//                            }
-//                        }
-//                        return post
-//                    }
-//                    self.currentPosts.append(contentsOf: self.allPosts)
-//
-//                    
-//                   
-//           
-//                }
-//            }
-//        }
-//   
-//    }
     
     func readSavedPostsFrom(){
         
@@ -127,7 +36,6 @@ class PostRepositorySingleton{
         do{
             let data = try Foundation.Data(contentsOf: self.path)
             self.savedPosts = try JSONDecoder().decode([Post].self, from: data)
-            // print("------------------ \(self.allPosts)")
             
         }
         catch {
