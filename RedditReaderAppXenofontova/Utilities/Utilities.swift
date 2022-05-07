@@ -7,8 +7,12 @@
 
 import Foundation
 import UIKit
+import ObjectiveC
 
-struct Utilities{
+class Utilities{
+    
+    static let shared = Utilities()
+    private init() {}
     
     static func drawBookmark(bookmark: inout UIButton, post: Post) -> UIButton {
         
@@ -123,7 +127,78 @@ struct Utilities{
     
     
     
-        }
+    
+    static func drawBookmark(in image: UIImageView, post: Post) -> UIView {
+
+        let margin: CGFloat = 150
+        
+        let view = UIView()
+        
+        // create a new path
+        let path = UIBezierPath()
+        
+        path.move(to: CGPoint(x: image.frame.midX - margin/2, y: image.frame.midY - image.frame.minY - margin))
+        path.addLine(to: CGPoint(x: image.frame.midX + margin/2, y: image.frame.midY - image.frame.minY - margin))
+        path.addLine(to: CGPoint(x: image.frame.midX + margin/2, y: image.frame.midY - image.frame.minY + margin))
+        path.addLine(to: CGPoint(x: image.frame.midX, y: image.frame.midY - image.frame.minY + margin / 3))
+        path.addLine(to: CGPoint(x: image.frame.midX - margin/2, y: image.frame.midY - image.frame.minY + margin))
+        path.addLine(to: CGPoint(x: image.frame.midX - margin/2, y: image.frame.midY - image.frame.minY - margin))
+        path.close()
+        
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        
+        shapeLayer.fillColor = post.saved ? UIColor.systemOrange.cgColor : UIColor.clear.cgColor
+        shapeLayer.strokeColor = UIColor.systemOrange.cgColor
+        shapeLayer.lineWidth = 4
+ 
+        shapeLayer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
+        
+        view.layer.addSublayer(shapeLayer)
+        view.isHidden = true
+   
+        return view
+    
+    }
+    
+    
+    
+//    @objc static func bookmarkAnimation(image: UIImageView, post: Post, animatedBookmark: UnsafeMutablePointer<UIView>, vc: UIViewController){
+//
+//        animatedBookmark = Utilities.drawBookmark(in: image, post: post)
+//
+//        image.addSubview(animatedBookmark)
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now()) {
+//            UIView.transition(
+//                with: vc.view,
+//                duration: 1.5,
+//                options: .transitionCrossDissolve
+//            ) {
+//                animatedBookmark.isHidden = false
+//
+//                DispatchQueue.main.asyncAfter(deadline: .now()) {
+//                    UIView.transition(
+//                        with: vc.view,
+//                        duration: 1.5,
+//                        options: .transitionCrossDissolve
+//                    ) {
+//                        animatedBookmark.isHidden = true
+//
+//                    }
+//
+//                }
+//            }
+//
+//        }
+//
+//  }
+    
+    
+}
+
+
     
     
 

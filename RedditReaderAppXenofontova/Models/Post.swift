@@ -9,10 +9,8 @@ import Foundation
 
 
 
-struct Post :  Codable, Equatable {
+class Post :  NSObject, Codable{
 
-    
-    
     
     var username: String
     var domain: String
@@ -28,7 +26,7 @@ struct Post :  Codable, Equatable {
     
     
     
-    init(){
+    override init(){
         
         self.username = ""
         self.domain = ""
@@ -52,7 +50,7 @@ struct Post :  Codable, Equatable {
         self.domain = childData.domain
         self.timePassed = Utilities.calcDate(created: childData.created)
         self.title = childData.title
-        self.imageUrl = childData.preview?.images[0].source.url.replacingOccurrences(of: "amp;", with: "") ?? Const.defaultGlybaImageUrl
+        self.imageUrl = childData.preview?.images[0].source.url.replacingOccurrences(of: "amp;", with: "") ?? ""
         self.numOfComments = childData.numOfComments
         self.rating = childData.ups + childData.downs
         self.saved = childData.saved
@@ -96,7 +94,7 @@ struct Post :  Codable, Equatable {
         }
 
     
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.username = try values.decode(String.self, forKey: .username)
         self.domain = try values.decode(String.self, forKey: .domain)
@@ -113,9 +111,7 @@ struct Post :  Codable, Equatable {
     }
     
     
-    static func ==(lhs: Post, rhs: Post) -> Bool {
-        return (lhs.username == rhs.username) && (lhs.domain == rhs.domain) && (lhs.timePassed == rhs.timePassed) && (lhs.title == rhs.title) && (lhs.imageUrl == rhs.imageUrl) && (lhs.numOfComments == rhs.numOfComments) && (lhs.rating == rhs.rating) && (lhs.saved == rhs.saved) && (lhs.subredditNamePrefixed == rhs.subredditNamePrefixed) && (lhs.postUrl == rhs.postUrl) && (lhs.id == rhs.id) 
-        }
+
     
     
     

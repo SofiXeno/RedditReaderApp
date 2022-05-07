@@ -44,11 +44,21 @@ class PostDetailsViewController: UIViewController {
     var post: Post = Post()
     weak var delegateTable: UITableView?
     var state = false
+    private var animatedBookmark: UIView?
     
     
     // MARK: Lifecycle
     override func viewDidLoad() {
         
+        
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(self.bookmarkAnimation))
+        doubleTap.numberOfTapsRequired = 2
+        doubleTap.delaysTouchesBegan = true
+
+        self.image.gestureRecognizers?.forEach{self.image.removeGestureRecognizer($0)}
+        self.image.addGestureRecognizer(doubleTap)
+        self.image.isUserInteractionEnabled = true
+
         
         self.usernameLabel.text = post.username
         self.domainLabel.text = post.domain
@@ -57,12 +67,60 @@ class PostDetailsViewController: UIViewController {
         self.ratingLabel.text = String(post.rating)
         self.bookmark = Utilities.drawBookmark(bookmark: &self.bookmark, post: self.post)
         
-        self.image.sd_setImage(with: URL(string: post.imageUrl), placeholderImage: UIImage(named: "50-0.jpg"))
+        self.image.sd_setImage(with: URL(string: post.imageUrl), placeholderImage: UIImage(named: Const.defaultGlybaImageUrl))
+     
+
         
         super.viewDidLoad()
         
+     
     }
     
+ 
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.image.layer.sublayers?.forEach { $0.removeFromSuperlayer() }
+
+        self.animatedBookmark = Utilities.drawBookmark(in: self.image, post: self.post)
+
+        self.image.addSubview(self.animatedBookmark!)
+    
+    }
+
+    @objc func bookmarkAnimation(){
+
+        self.animatedBookmark = Utilities.drawBookmark(in: self.image, post: self.post)
+        
+        self.image.addSubview(self.animatedBookmark!)
+
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            UIView.transition(
+                with: self.view,
+                duration: 1.5,
+                options: .transitionCrossDissolve
+            ) {
+                self.animatedBookmark?.isHidden = false
+
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    UIView.transition(
+                        with: self.view,
+                        duration: 1.5,
+                        options: .transitionCrossDissolve
+                    ) {
+                        self.animatedBookmark?.isHidden = true
+
+                    }
+
+                }
+            }
+
+        }
+        
+        self.savePostAction(self.bookmark!)
+  }
     
 }
 

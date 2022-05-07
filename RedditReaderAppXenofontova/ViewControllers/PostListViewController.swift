@@ -191,6 +191,7 @@ extension PostListViewController: UITableViewDataSource, UITableViewDelegate, UI
         cell.selectionStyle = .none
         cell.config(from: PostRepositorySingleton.shared.currentPosts[indexPath.row])
         cell.delegate = self
+        cell.delegateVC = self
         
         return cell
     }
@@ -304,4 +305,3 @@ extension PostListViewController : PostTableViewCellDelegate {
     }
     
 }
-
