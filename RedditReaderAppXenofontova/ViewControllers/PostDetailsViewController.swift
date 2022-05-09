@@ -19,6 +19,8 @@ class PostDetailsViewController: UIViewController {
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var image: UIImageView!
     @IBOutlet private weak var bookmark: UIButton!
+    @IBOutlet private weak var commentButton: UIButton!
+    @IBOutlet private weak var commentLabel: UILabel!
     
     // MARK: IBActions
     @IBAction private func share(_ sender: Any) {
@@ -68,6 +70,7 @@ class PostDetailsViewController: UIViewController {
         self.bookmark = Utilities.drawBookmark(bookmark: &self.bookmark, post: self.post)
         
         self.image.sd_setImage(with: URL(string: post.imageUrl), placeholderImage: UIImage(named: Const.defaultGlybaImageUrl))
+        self.commentLabel.text = String(post.numOfComments)
      
 
         

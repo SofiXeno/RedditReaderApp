@@ -20,7 +20,11 @@ class PostTableViewCell: UITableViewCell{
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var ratingLabel: UILabel!
     @IBOutlet private weak var imagePost: UIImageView!
-    @IBOutlet weak var bookmark: UIButton!
+    @IBOutlet private weak var bookmark: UIButton!
+    @IBOutlet private weak var commentsButton: UIButton!
+    @IBOutlet private weak var commentsLabel: UILabel!
+    
+    
     
     @IBAction func shareAction(_ sender: Any) {
         
@@ -64,6 +68,7 @@ class PostTableViewCell: UITableViewCell{
         self.bookmark = Utilities.drawBookmark(bookmark: &self.bookmark, post: self.post)
         self.imagePost.sd_setImage(with: URL(string: post.imageUrl), placeholderImage: UIImage(named: Const.defaultGlybaImageUrl))
         self.selectedPostUrl = post.postUrl
+        self.commentsLabel.text = String(post.numOfComments)
         
         //-------------------------
        // self.imagePost.layer.sublayers?.forEach { $0.removeFromSuperlayer() }

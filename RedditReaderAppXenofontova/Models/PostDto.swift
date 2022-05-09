@@ -72,8 +72,8 @@ struct ChildData: Decodable {
     let created: Double
     let title: String
     let numOfComments: Int
-    let ups : Double
-    let downs: Double
+    let ups : Int
+    let downs: Int
     let saved: Bool
     let subredditNamePrefixed: String
     let link: String
@@ -89,8 +89,8 @@ struct ChildData: Decodable {
         self.created = try values.decode(Double.self, forKey: .timePassed)
         self.title = try values.decode(String.self, forKey: .title)
         self.numOfComments = try values.decode(Int.self, forKey: .numOfComments)
-        self.ups = try values.decode(Double.self, forKey: .ups)
-        self.downs = try values.decode(Double.self, forKey: .downs)
+        self.ups = try values.decode(Int.self, forKey: .ups)
+        self.downs = try values.decode(Int.self, forKey: .downs)
         self.saved = try values.decode(Bool.self, forKey: .saved)
         self.subredditNamePrefixed = try values.decode(String.self, forKey: .subredditNamePrefixed)
         self.preview = try values.decodeIfPresent(Preview.self, forKey: .preview)

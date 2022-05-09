@@ -18,7 +18,7 @@ class Post :  NSObject, Codable{
     var title: String
     var imageUrl: String
     var numOfComments: Int
-    var rating : Double
+    var rating : Int
     var saved: Bool
     var subredditNamePrefixed: String
     var postUrl: String
@@ -102,7 +102,7 @@ class Post :  NSObject, Codable{
         self.title = try values.decode(String.self, forKey: .title)
         self.imageUrl = try values.decode(String.self, forKey: .imageUrl)
         self.numOfComments = try values.decode(Int.self, forKey: .numOfComments)
-        self.rating = try values.decode(Double.self, forKey: .rating)
+        self.rating = try values.decode(Int.self, forKey: .rating)
         self.saved = try values.decode(Bool.self, forKey: .saved)
         self.subredditNamePrefixed = try values.decode(String.self, forKey: .subredditNamePrefixed)
         self.postUrl = try values.decode(String.self, forKey: .postUrl)
